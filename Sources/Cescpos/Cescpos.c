@@ -7,7 +7,7 @@
 
 #include "include/Cescpos.h"
 
-int escpos_print(UInt32 idVendor, UInt32 idProduct, unsigned int buspipe,const char *buffer, unsigned int length) {
+int escpos_print(UInt32 idVendor, UInt32 idProduct, UInt32 buspipe,const char *buffer, unsigned int length) {
     
     // Let’s now implement the main function. Add the following variable declarations.
     CFMutableDictionaryRef matchingDictionary = NULL;
