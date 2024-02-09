@@ -17,7 +17,7 @@ public enum EscposPrintError: Int32, LocalizedError {
 
 public func escposPrint(vendorId: UInt32, productId: UInt32, buspipe: UInt8, data: Data) throws {
     let ret = data.withUnsafeBytes{ (buffer: UnsafeRawBufferPointer) -> Int32 in
-        return escpos_print(vendorId, productId, buffer.baseAddress, UInt32(buffer.count))
+        return escpos_print(vendorId, productId, buspipe, buffer.baseAddress, UInt32(buffer.count))
     }
     
     if let err = EscposPrintError(rawValue: ret) {
