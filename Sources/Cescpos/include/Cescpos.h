@@ -24,6 +24,6 @@
 ///   - idProduct: The USB Product number
 ///   - buffer: The zero-terminated buffer to send to the device
 ///   - length: Length of the Buffer.
-int escpos_print(UInt32 idVendor, UInt32 idProduct, const char *buffer, unsigned int length);
+int escpos_print(UInt32 idVendor, UInt32 idProduct, UInt32 buspipe, const char *buffer, unsigned int length);
 
 #endif /* Cescpos_h */
