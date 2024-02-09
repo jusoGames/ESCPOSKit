@@ -24,4 +24,4 @@ let commands: [ESCPOSCommand] = [
 let data = commands.map(\.dataValue).reduce(into: Data(), { $0.append($1) })
 
 // My Epson TM-T20III Receipt Printer over USB
-try! escposPrint(vendorId: 0x04B8, productId: 0x0202, data: data)
+//try! escposPrint(vendorId: 0x04B8, productId: 0x0202, data: data)
