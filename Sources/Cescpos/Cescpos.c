@@ -92,7 +92,7 @@ int escpos_print(UInt32 idVendor, UInt32 idProduct, UInt32 buspipe, const char *
     // For some reason, if we read less than 64 bytes I/O Kit returns a kIOReturnOverrun error. Coincidentally, the max packet size of the bulk input pipe of the device is also 64 bytes.
     
     // Send data through pipe 1
-    (*usbInterface)->WritePipe(usbInterface, buspipe, (char *)buffer, length);
+    (*usbInterface)->WritePipe(usbInterface, &buspipe, (char *)buffer, length);
     
     // To wrap it all, we close the interface and device, and return from main
     (*usbInterface)->USBInterfaceClose(usbInterface);
