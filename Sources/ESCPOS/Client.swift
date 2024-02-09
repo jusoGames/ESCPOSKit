@@ -15,7 +15,7 @@ public enum EscposPrintError: Int32, LocalizedError {
     case couldNotOpenInterface = -4
 }
 
-public func escposPrint(vendorId: UInt32, productId: UInt32, data: Data) throws {
+public func escposPrint(vendorId: UInt32, productId: UInt32, buspipe: UInt8, data: Data) throws {
     let ret = data.withUnsafeBytes{ (buffer: UnsafeRawBufferPointer) -> Int32 in
         return escpos_print(vendorId, productId, buffer.baseAddress, UInt32(buffer.count))
     }
